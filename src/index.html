@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon"  href=" " />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Image gallery</title>
+  </head>
+  <body>
+    <header>
+      <a href="https://web3.storage/account/">web3storageへ
+        <img src=" " style="height:1.8rem" />
+      </a>
+      <nav>
+        <span class="nav-current-page">アップロード　</span>
+        <a href="./gallery.html">ギャラリー　</a>
+        <a href="./settings.html">設定　</a>
+      </nav>
+    </header>
+    <div id="app">
+      <div id="upload-ui">
+
+        <div id="upload-input-area">
+          <div id="welcome-message">
+            <a href="https://web3.storage"></a>
+            画像ファイルを選択してください。
+            ボックスに画像をドラッグする or ボタンをクリック！
+          </div>
+          <div id="drop-area">
+            <form id="inputs">
+              <!-- The label for the hidden file input is styled as a button and can be clicked to select a file -->
+              <label class="select-button" for="file-input">ファイルを選択</label>
+              <input class="hidden" type="file" id="file-input" accept=".jpeg,.jpg,.png,.gif, .mp3, image/*" />
+
+              <img id="image-preview" class="preview-image" />
+
+              <div class="spacer"></div>
+              <label for="caption-input">コメント入力欄</label>
+              <input id="caption-input" placeholder="Enter a caption"/>
+
+              <button id="upload-button" disabled="true">アップロード</button>
+            </form>
+          </div>
+        </div>
+
+        <div id="upload-in-progress" class="hidden" >
+          <h3>Web3.Storageへアップロード中...</h3>
+          <img id="uploading-preview-image" class="preview-image" />
+          <div>
+            <span id="uploading-caption"></span>
+          </div>
+          <div id="upload-spinner">
+            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+          </div>
+          <div id="output"></div>
+        </div>
+
+        <div id="upload-success" class="hidden">
+          <h3>🌸 Yay! アップロード完了！</h3>
+          <img class="preview-image" />
+
+          <div id="success-links">
+            <a id="success-gallery-link">ギャラリーで見る</a>
+            <a id="success-gateway-link" target="_external">IPFSで見る<span class="fontawesome-share"></span></a>
+            <a href=".">他の画像をアップロードする</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="snackbar"></div>
+    <script type="module" src="./js/upload.js"></script>
+  </body>
+</html>

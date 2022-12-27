@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image gallery</title>
+  </head>
+  <body>
+    <header>
+      <a href="https://web3.storage/account/">web3storageへ
+        <img src=" " style="height:1.8rem" />
+      </a>
+      <div class="spacer"></div>
+      <nav>
+        <a href="./index.html">アップロード　</a>
+        <a href="./gallery.html">ギャラリー　</a>
+        <span class="nav-current-page">設定　</span>
+      </nav>
+    </header>
+    <div id="app">
+      <div id="token-ui">
+        <form id="token-form">
+
+          <div id="token-spinner" class="hidden">
+            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+          </div>
+
+          <div id="token-input-wrapper">
+            <label for="token-input">Enter an API token for Web3.Storage</label>
+
+            <p>
+              You need a free API token to use Web3.Storage.
+            <br/>
+              See the <a href="https://docs.web3.storage/how-tos/generate-api-token/">guide to creating an API token</a> if you don't already have one!
+            </p>
+
+            <input id="token-input" placeholder="eyJhb..." />
+            <button id="token-save-button"><span class="fontawesome-save"></span>Save Token</button>
+
+
+          </div>
+
+          <div id="saved-token-wrapper" class="hidden">
+            <label for="saved-token">あなたの API トークン</label>
+            <input id="saved-token" disabled="true" />
+
+            <button id="token-delete-button"><span class="fontawesome-trash"></span>トークンを削除</button>
+
+            <p>
+              API トークンは、ブラウザーのローカル ストレージに保存されます。
+              これで、<a href="./index.html">画像をアップロード</a>したり、<a href="./gallery.html">ギャラリーを表示</a>したりできます!
+            </p>
+            <p>
+              <a href="https://docs.web3.storage/how-tos/generate-api-token/">APIトークンの作り方</a>
+            </p>
+          </div>
+        </form>
+
+        <div id="about-message">
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+    <div id="snackbar"></div>
+    <script type="module" src="./js/settings.js"></script>
+  </body>
+</html>
